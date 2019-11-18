@@ -20,7 +20,7 @@ Regular.ttf"
 #### Train model to break the Claptcha Generated Captcha using Deep Learning(CNN)
 ```bash
 
-python captcha_solver.py train --dest_train '/home/arpit/Downloads/Captcha Generation/captcha_train/' --dest_val '/home/arpit/Downloads/Captcha Generation/captcha_val/' --outdir '/home/arpit/ML_DS_Catalog-/captcha/model/' --batch_size 16 --lr 1e-3 --epochs 20 --n_classes 36 --shuffle True --dim '(40,100,1)'
+python captcha_solver.py train --dest_train '/home/arpit/Downloads/Captcha Generation/captcha_train/' --dest_val '/home/arpit/Downloads/Captcha Generation/captcha_val/' --outdir '/home/arpit/captcha/model/' --batch_size 16 --lr 1e-3 --epochs 20 --n_classes 36 --shuffle True --dim '(40,100,1)'
 
 ```
 
@@ -28,7 +28,7 @@ python captcha_solver.py train --dest_train '/home/arpit/Downloads/Captcha Gener
 
 ```bash
 
-python captcha_solver.py evaluate --model_path /home/arpit/ML_DS_Catalog-/captcha/model/captcha_breaker.h5 --eval_dest '/home/arpit/Downloads/Captcha Generation/captcha_test/' --outdir /home/arpit/ML_DS_Catalog-/captcha/ --fetch_target True
+python captcha_solver.py evaluate --model_path /home/arpit/captcha/model/captcha_breaker.h5 --eval_dest '/home/arpit/Downloads/Captcha Generation/captcha_test/' --outdir /home/arpit/captcha/ --fetch_target True
 
 ```
 
@@ -37,7 +37,7 @@ python captcha_solver.py evaluate --model_path /home/arpit/ML_DS_Catalog-/captch
 ```bash
 
 
-python captcha_gan.py train --dest_train '/home/arpitDownloads/train_32x32.mat' --outdir '/home/arpit/ML_DS_Catalog-/captcha/SVHN/' --dir_flag False --batch_size 100 --gen_input_dim 100 --gen_beta1 0.5 --gen_lr 0.0001 --dis_input_dim '(32,32,3)' --dis_lr 0.001 --dis_beta1 0.5 --alpha 0.2 --epochs 100 --smooth_coef 0.1
+python captcha_gan.py train --dest_train '/home/arpitDownloads/train_32x32.mat' --outdir '/home/arpit/captcha/SVHN/' --dir_flag False --batch_size 100 --gen_input_dim 100 --gen_beta1 0.5 --gen_lr 0.0001 --dis_input_dim '(32,32,3)' --dis_lr 0.001 --dis_beta1 0.5 --alpha 0.2 --epochs 100 --smooth_coef 0.1
 
 ```
 
@@ -45,6 +45,6 @@ python captcha_gan.py train --dest_train '/home/arpitDownloads/train_32x32.mat' 
 
 ```bash
 
-python captcha_gan.py generate-captcha --gen_input_dim 100 --num_images 200 --model_dir '/home/arpit/ML_DS_Catalog-/captcha/' --outdir '/home/arpit/ML_DS_Catalog-/captcha/captcha_for_use/' --alpha 0.2
+python captcha_gan.py generate-captcha --gen_input_dim 100 --num_images 200 --model_dir '/home/arpit/captcha/' --outdir '/home/arpit/captcha/captcha_for_use/' --alpha 0.2
 
 ```
